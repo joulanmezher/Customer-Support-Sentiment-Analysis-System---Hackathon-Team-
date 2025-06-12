@@ -1,0 +1,376 @@
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            flex-direction: column; /* Stack header and container vertically */
+            align-items: center; /* Center content horizontally */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        /* Main Header Styles */
+        .main-header {
+            width: 90%;
+            max-width: 1200px;
+            background-color: #ededed;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 10px; /* Space between header and main container */
+            box-sizing: border-box;
+        }
+
+        .header-top-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .app-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .filter-section,
+        .sort-section {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.9em;
+            flex-grow: 1;
+        }
+
+        .filter-section label,
+        .sort-section label {
+            margin-left: 8px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .custom-select {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 1em;
+            color: #333;
+            cursor: pointer;
+            flex-grow: 1;
+        }
+
+        .custom-select option {
+            padding: 5px;
+        }
+
+        .check-icon {
+            margin-right: 5px;
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Main Container Styles */
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            flex-grow: 1; /* Allow container to take remaining vertical space */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden; /* Crucial for preventing content from overflowing the container */
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 35%;
+            border-right: 1px solid #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            background-color: #f7f7f7;
+        }
+
+        .sidebar-top-section {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #ededed;
+        }
+
+        .sidebar-search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .sidebar-search-bar input {
+            flex-grow: 1;
+            border: none;
+            outline: none;
+            padding: 5px;
+            font-size: 0.9em;
+        }
+
+        .sidebar-search-bar .search-icon,
+        .sidebar-search-bar .close-search-icon {
+            margin: 0 5px;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .contact-list {
+            flex-grow: 1; /* Allows contact list to take available space */
+            overflow-y: auto; /* Enables scrolling for contact list */
+            padding: 10px;
+            min-height: 0; /* Prevents flex item from overflowing its container */
+        }
+
+        /* Contact Card Styles */
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            margin-bottom: 8px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .contact-card:hover {
+            background-color: #f0f0f0;
+        }
+
+        .contact-card.active {
+            background-color: #e6f7ff;
+            border-left: 4px solid #007bff;
+        }
+
+        .contact-name {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            font-size: 0.85em;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .last-chat-date {
+            font-size: 0.75em;
+            color: #999;
+            text-align: left;
+        }
+
+        /* Main Chat Area Styles */
+        .main-chat {
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /* Allows main-chat to take available vertical space */
+        }
+
+        .chat-header {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #ededed;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .person-sections {
+            flex-grow: 1; /* Allows section tabs and content to take available space */
+            display: flex;
+            flex-direction: column;
+            min-height: 0; /* Prevents flex item from overflowing its container */
+        }
+
+        .section-tabs {
+            display: flex;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab-button {
+            flex-grow: 1;
+            padding: 15px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1em;
+            color: #555;
+            transition: background-color 0.2s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-button:hover {
+            background-color: #e5e5e5;
+        }
+
+        .tab-button.active {
+            color: #007bff;
+            font-weight: bold;
+            border-bottom: 3px solid #007bff;
+            background-color: #fff;
+        }
+
+        .section-content {
+            flex-grow: 1; /* Allows section content to take remaining space */
+            padding: 0; /* Keep padding 0 here, add it within panes if needed for specific content */
+            overflow-y: auto; /* This is where the scrollbar for the overall section content will appear */
+            background-color: #e5ddd5;
+            min-height: 0; /* Critical for flex items with overflow: auto */
+        }
+
+        .section-pane {
+            display: none;
+            flex-grow: 1; /* Allows active pane to take full height of section-content */
+            overflow-y: auto; /* Each pane is independently scrollable if its content exceeds its height */
+            padding: 20px; /* Padding inside each pane */
+            box-sizing: border-box;
+            min-height: 0; /* Critical for flex items with overflow: auto */
+        }
+
+        .section-pane.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Chat Messages Styling */
+        #chatSection .chat-messages {
+            flex-grow: 1; /* Allows chat messages area to take all available space within chat section */
+            overflow-y: auto; /* Enables scrolling for chat messages */
+            padding: 20px 10px; /* Padding for the messages themselves */
+            background-color: #e5ddd5;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Start messages from the top */
+            min-height: 0; /* Critical for flex items with overflow: auto */
+        }
+
+        .message-container {
+            display: flex; /* Use flexbox for alignment */
+            margin-bottom: 8px; /* Space between messages */
+        }
+
+        .message {
+            max-width: 75%; /* Limit message width */
+            padding: 10px 12px;
+            border-radius: 18px; /* Rounded corners for chat bubbles */
+            line-height: 1.4;
+            word-wrap: break-word;
+            box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13); /* Subtle shadow for depth */
+        }
+
+        .message.you {
+            background-color: #dcf8c6; /* WhatsApp-like green for sent messages */
+            align-self: flex-end; /* Align to the right */
+            margin-left: auto; /* Push to the right */
+            margin-right: 10px; /* Space from the right edge */
+        }
+
+        .message.other {
+            background-color: #ffffff; /* White/light gray for received messages */
+            align-self: flex-start; /* Align to the left */
+            margin-left: 10px; /* Space from the left edge */
+            margin-right: auto; /* Push to the left */
+        }
+
+        .initial-message {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        /* Chat Input Styles */
+        #chatSection .chat-input {
+            display: flex;
+            padding: 15px 10px; /* Adjusted padding to include sides */
+            border-top: 1px solid #e0e0e0;
+            background-color: #f0f0f0;
+            width: 100%;
+            box-sizing: border-box;
+            align-items: center; /* Vertically align input and button */
+        }
+
+        #chatSection .chat-input input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-size: 1em;
+            outline: none; /* Remove outline on focus */
+        }
+
+        #chatSection .chat-input button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease;
+            margin-right: 10px; /* Space from the right edge */
+        }
+
+        #chatSection .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Debt Details and Notes Section Styles */
+        #debt-detailsSection h3,
+        #notesSection h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        #notesSection textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        /* Scrollbar Styling (for Webkit browsers) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }

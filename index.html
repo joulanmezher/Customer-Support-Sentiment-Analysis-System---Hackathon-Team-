@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق دفتر دين (واجهة تشبه الواتساب)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-top-row">
+            <!-- Using a placeholder logo as no image was provided -->
+            <img src="logo.png" alt="Bank of Palestine Logo" class="app-logo">
+        </div>
+        <div class="header-bottom-row">
+            <div class="filter-section">
+                <label for="filter-select">تصفية حسب:</label>
+                <select id="filter-select" class="custom-select">
+                    <option value="all">الكل</option>
+                    <option value="committed-receipts">الإيصالات الملتزمة</option>
+                    <option value="unpaid">غير مدفوعة</option>
+                </select>
+                <span class="check-icon">✓</span>
+            </div>
+            <div class="sort-section">
+                <label for="sort-select">ترتيب حسب:</label>
+                <select id="sort-select" class="custom-select">
+                    <option value="newest">الأحدث</option>
+                    <option value="oldest">الأقدم</option>
+                    <option value="amount-asc">المبلغ: الأدنى للأعلى</option>
+                    <option value="amount-desc">المبلغ: الأعلى للأدنى</option>
+                </select>
+                <span class="check-icon">✓</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-top-section">
+                <div class="sidebar-search-bar">
+                    <input type="text" placeholder="ابحث عن شخص...">
+                    <span class="search-icon">🔍</span>
+                    <span class="close-search-icon">X</span>
+                </div>
+            </div>
+            <div class="contact-list" id="contactList">
+            </div>
+        </div>
+        <div class="main-chat">
+            <div class="chat-header">
+                <h3 id="currentChatName">الرجاء اختيار محادثة</h3>
+            </div>
+            <div class="person-sections">
+                <div class="section-tabs">
+                    <button class="tab-button active" data-section="chat">المحادثة</button>
+                    <button class="tab-button" data-section="debt-details">تفاصيل الدين</button>
+                    <button class="tab-button" data-section="notes">ملاحظات</button>
+                </div>
+                <div class="section-content" id="sectionContent">
+                    <div id="chatSection" class="section-pane active">
+                        <div class="chat-messages" id="chatMessages">
+                            <p class="initial-message">مرحباً! اختر شخصاً من القائمة الجانبية لبدء المحادثة أو رؤية سجل
+                                الديون.</p>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" placeholder="اكتب رسالتك هنا...">
+                            <button>إرسال</button>
+                        </div>
+                    </div>
+
+                    <div id="debt-detailsSection" class="section-pane">
+                        <h3>تفاصيل الدين لهذا الشخص</h3>
+                        <!-- Example content for scrolling -->
+                        <p>هنا سيتم عرض تفاصيل الديون، المبالغ المستحقة، تاريخ الاستحقاق، إلخ.
+                            <br>المبلغ المستحق: <b>500 شيكل</b></br>
+                            <br>تاريخ الاستحقاق: <b>31/12/2024</b></br>
+                            <br>
+                            تفاصيل إضافية عن الدين يمكن أن تضاف هنا. يمكن أن تكون هذه المنطقة طويلة جداً
+                            لضمان اختبار التمرير.
+                            <br><br>
+                            هذا نص تجريبي إضافي لملء الفراغ واختبار خاصية التمرير. إذا كان هذا النص
+                            طويلاً بما يكفي، فيجب أن يظهر شريط التمرير على الجانب الأيمن.
+                            <br><br>
+                            الرجاء التأكد من أن جميع تفاصيل الدين يمكن رؤيتها بوضوح عند التمرير.
+                            <br><br>
+                            مثال:
+                            <br>دفعة بتاريخ 2023-01-15: 100 شيكل (تم الدفع)</br>
+                            <br>دفعة بتاريخ 2023-02-20: 50 شيكل (متبقي)</br>
+                            <br>
+                            ملاحظات على الدفعات:
+                            <br>- الدفعة الأولى كانت عن طريق التحويل البنكي.</br>
+                            <br>- الدفعة الثانية متوقعة نقداً.</br>
+                            <br><br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <br><br>
+                            هذا نص تجريبي إضافي لملء الفراغ واختبار خاصية التمرير. إذا كان هذا النص
+                            طويلاً بما يكفي، فيجب أن يظهر شريط التمرير على الجانب الأيمن.
+                            <br><br>
+                            الرجاء التأكد من أن جميع تفاصيل الدين يمكن رؤيتها بوضوح عند التمرير.
+                            <br><br>
+                            مثال:
+                            <br>دفعة بتاريخ 2023-01-15: 100 شيكل (تم الدفع)</br>
+                            <br>دفعة بتاريخ 2023-02-20: 50 شيكل (متبقي)</br>
+                            <br>
+                            ملاحظات على الدفعات:
+                            <br>- الدفعة الأولى كانت عن طريق التحويل البنكي.</br>
+                            <br>- الدفعة الثانية متوقعة نقداً.</br>
+                            <br><br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+
+                    <div id="notesSection" class="section-pane">
+                        <h3>ملاحظات خاصة بهذا الشخص</h3>
+                        <textarea placeholder="اكتب ملاحظاتك هنا..."></textarea>
+                        <p>هذا النص يمثل ملاحظات إضافية.
+                            <br>يمكنك إضافة ملاحظات حول المدفوعات، أو التذكيرات، أو أي تفاصيل خاصة بالشخص.
+                            <br>
+                            مثال:
+                            <br>- الشخص يفضل التواصل عبر الواتساب.</br>
+                            <br>- يجب تذكيره بالدفعة في بداية كل شهر.</br>
+                            <br>- تمت مقابلة في تاريخ 2023-05-10 لمناقشة خطة السداد.</br>
+                            <br><br>
+                            هذا نص تجريبي إضافي لملء الفراغ واختبار خاصية التمرير. إذا كان هذا النص
+                            طويلاً بما يكفي، فيجب أن يظهر شريط التمرير على الجانب الأيمن.
+                            <br><br>
+                            الرجاء التأكد من أن جميع الملاحظات يمكن رؤيتها بوضوح عند التمرير.
+                            <br><br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <br><br>
+                            هذا نص تجريبي إضافي لملء الفراغ واختبار خاصية التمرير. إذا كان هذا النص
+                            طويلاً بما يكفي، فيجب أن يظهر شريط التمرير على الجانب الأيمن.
+                            <br><br>
+                            الرجاء التأكد من أن جميع الملاحظات يمكن رؤيتها بوضوح عند التمرير.
+                            <br><br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
